@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FleurComponent } from './fleur/fleur.component';
 
 const routes: Routes = [
-  { path: 'fleur', component: FleurComponent }
+  { path: 'fleurs', component: FleurComponent }
 ];
 
 @NgModule({
