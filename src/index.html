@@ -3,23 +3,25 @@
 <head>
   <meta charset="utf-8">
   <title>Vitrine</title>
-  <!-- to upload to gh-pages
-     <base href="/vitrine/"> -->
+  <!-- to upload to gh-pages-->
+  <!-- <base href="/vitrine/">  -->
   <!-- for localhost-->
-     <base href="/"> 
+  <base href="/"> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">  
 
 </head>
 <body>
-<div id="ie" style="display: none;">
-<p>your browser is not supported. please try again using chrome, firefox, safari or any other modern browser you fucking caveman</p></div>
+  <div id="ie" style="display: none; position: absolute; top: 0">
+  <p>your browser is not supported. please try again using chrome, firefox, safari or any other modern browser you fucking caveman</p></div>
+
   <app-root></app-root>
+  
   <script type="text/javascript">
   // only for internet fucking explorer
   if (window.document.documentMode) {
     let ie = document.getElementById('ie');
-          ie.style = 'display: block';
+          ie.style.display = 'block';
   }</script>
 </body>
 </html>

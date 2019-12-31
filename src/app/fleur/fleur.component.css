@@ -1,21 +1,10 @@
-h1 {
-    font-size: 4em;
+
+@import url('https://fonts.googleapis.com/css?family=Courgette|Varela+Round&display=swap');
+
+.layout{
+    font-family: 'Varela Round', sans-serif;
 }
 
-.box1 {
-    background-color: rgb(158, 81, 81);
-    grid-area: box1;
-}
-.box2 {
-    background-image: url(http://www.frankfleuriste.com/photos/DSCN1757.jpg);
-    background-size: cover;
-    background-position-y: -50px;
-    background-repeat: no-repeat;
-    /* background-color: rgb(81, 86, 158); */
-    grid-area: box2;
-    height: 75vh;
-    
-}
 .header {
     z-index: 100;
     position: fixed;
@@ -23,14 +12,125 @@ h1 {
     height: 100px;
     width: 100%;
     background-color: rgba(190, 190, 190, 0.507);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: space-between;
+    
+    transition: all 0.3s ease;
 }
 
-.header h3{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.logo img {
+    width: 50px;
+    transition: 0.3s
+}
+
+/* Shrink nav bar on scroll*/
+.small {
+    height: 70px;
+}
+
+.small .logo .frank {
+    font-size: 3em;
+}
+
+.small h3 {
+    font-size: .9em;
+}
+
+.small .since {
+    display: none;
+}
+
+.small .logo img{
+    width: 33px;
+}
+
+.header .name{
     position: relative;
     top: -14px;
+}
 
+.logo {
+    margin-top: 7px;
+    transition: 0.3s;
+}
+
+.small .logo {
+    margin-top: 0;
+}
+
+.frank {
+    font-size: 4em;
+    transition: .3s;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.since {
+    position: absolute;
+    right: 20%;
+    top: 10px;
+    /* font-family: 'Courgette'; */
+    font-style: italic;
+    font-size: .6em;
+}
+
+.nav-links{
+    display: flex;
+    width: 50vw;
+    height: 100%;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+nav li {
+    list-style-type: none;    
+}
+
+nav li a {
+    /* no vertical-align: middle; */
+    font-size: .7em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: black;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+
+}
+
+.box1 {
+    background-color: rgb(158, 81, 81);
+    grid-area: box1;
+}
+.box2 {
+    background-image: url(http://www.frankfleuriste.com/photos/DSCN1745.jpg);
+    background-size: cover;
+    background-position-y: -50px;
+    background-repeat: no-repeat;
+    height: 75vh;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info {
+    padding: 20px;
+}
+
+.contact iframe {
+    height: 300px;
+    width: 50%;
+    right: 0;
 }
 
 .box3 {
@@ -40,60 +140,106 @@ h1 {
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-}
-
-.vente h1 {
-    z-index: 90;
-    height: 60px;
-    top: 100px;
-    padding: 10px 30px;
-    position: sticky;
-    font-size: 2em;
     
-    backdrop-filter: blur(10px);
+   
+}
+.vente {
+     background-color: rgba(180, 180, 180, 0.171);
+}
+.vente h1 {
+    padding: 10px 30px;
+    font-size: 2em;
 }
 
-.pic {
+.vente-text {
+    padding: 10px 30px;
+}
+
+.item {
+    overflow:hidden;
     margin-bottom: 20px;
-    padding: 20px;
     height: 340px;
     width: 300px;
     display: flex;
     flex-flow: column;
-    box-shadow: rgba(119, 136, 153, 0.466) 3px 3px 6px;
+    box-shadow: rgba(84, 130, 175, 0.288) 3px 3px 6px, #fff -3px -3px 6px;
+    border-radius: 17px;
+    border-style: double;
+    border-color: rgba(95, 158, 160, 0.24);
+    border-width: 3px;
+    background-color: #fff;
 }
 
-.pic img {
+.item img {
     display: block;
     width: 100%;
-    height: 85%;
-    margin: 0 auto;
+    height: 80%;
+    /* margin: 0 auto; */
     object-fit: cover;
     align-self: flex-start;
+}
+
+.item p{
+    margin: 5px 15px 0;
 }
 
 .layout {
     position: relative;
 }
-/* 
-.layout {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 300px 1fr;
-    grid-template-rows: 300px fit-content(200px);
-    grid-template-areas: 
-    "box1 box2"
-    "box1 box3";
+
+.burger div {
+    z-index: 100;
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+    transition: all 0.3s ease;
 }
 
-@media only screen and (max-width: 600px) {
-    .layout {
-        grid-template-columns: 1fr;
-        grid-template-rows: 100vh 200px 50vh;
-        grid-template-areas: 
-        "box1"
-        "box2"
-        "box3";
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px) {
+    .box2 {
+        height: 55vh;
+        background-position: top;
+    }
+    .layout{
+        overflow-x: hidden;
+    }
+    .burger{
+        display: block;
+    }
+    .nav-links {
+        width: 70vw;
+        padding-top: 10vh;
+        opacity: 0;
+        font-size: 2em;
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        flex-direction: column;
+        background-color: cadetblue;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in;
     }
 }
- */
+
+
+.nav-active{
+    opacity: 1;
+    transform: translateX(0%);
+ }
+
+ .toggle .burger1{
+     transform: rotate(-45deg) translate(-5px, 6px)
+ }
+ .toggle .burger2{
+    opacity: 0;
+ }
+ .toggle .burger3{
+    transform: rotate(45deg) translate(-5px, -6px)
+ }
