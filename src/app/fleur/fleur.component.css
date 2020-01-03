@@ -6,6 +6,71 @@
     position: relative;
 }
 
+.modal {
+    display: none;
+    opacity: 0;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgba(233, 247, 255, 0.644);
+    backdrop-filter: blur(5px);
+    transition: opacity .5s ease;
+}
+
+.modal-on {
+    opacity: 1;
+}
+
+.modal-content{
+    background-color: white;
+    margin: 100px auto;
+    padding: 20px;
+    width: 70%;
+    box-shadow: rgba(84, 130, 175, 0.288) 3px 3px 6px, #fff -3px -3px 6px, rgba(255, 255, 255, 0.699) 0px 0px 8px; 
+    border: 3px double rgba(95, 158, 160, 0.24);
+    border-radius: 17px;
+    line-height: 1.6;
+}
+
+.modal-content img {
+    float: left;
+    width: 50%;
+    align-self: center;
+    margin: 20px 20px 20px auto;
+}
+
+@media screen and (max-width: 500px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+.modalButton {
+    margin-right: 0;
+    border: none;
+    border-radius: 5px;
+    background-color: none;
+}
+
+
+.x-close{
+    margin: 20px 45%;
+    display: none;
+    position: fixed;
+    width: 40px;
+    /* top: 50px;
+    right: 20%; */
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    z-index: 120;
+}
 .landing {
     position: relative;
     background-image: url(https://images.pexels.com/photos/2069428/pexels-photo-2069428.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
@@ -54,10 +119,8 @@ th{
     display: flex;
     flex-flow: column;
     box-shadow: rgba(84, 130, 175, 0.288) 3px 3px 6px, #fff -3px -3px 6px;
+    border: 3px double rgba(95, 158, 160, 0.24);
     border-radius: 17px;
-    border-style: double;
-    border-color: rgba(95, 158, 160, 0.24);
-    border-width: 3px;
     background-color: #fff;
 }
 
@@ -79,5 +142,9 @@ th{
     .landing {
         height: 55vh;
         background-position: top;
+    }
+    .modal-content img{
+        width: 100%;
+        margin-right: auto;
     }
 }

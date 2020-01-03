@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-map-contact',
@@ -6,14 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map-contact.component.css']
 })
 export class MapContactComponent implements OnInit {
-
+  @Output() openModalOutput = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
+    this.check;
     
   }
 
+  openModalContact(){
+    this.openModalOutput.emit(true);
+  }
 
   public check(name: string, focus: boolean){
     let element = (<any>document.querySelector(`input[name=${name}]`))

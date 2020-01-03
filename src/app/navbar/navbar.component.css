@@ -47,6 +47,8 @@
 .logo {
     margin-top: 7px;
     transition: 0.3s;
+    text-decoration: none;
+    color: black;
 }
 
 .small .logo {
