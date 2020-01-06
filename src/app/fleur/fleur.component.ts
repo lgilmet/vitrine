@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Query } from '@angular/core';
 import { ItemService } from '../item.service';
 
 
@@ -28,6 +28,29 @@ export class FleurComponent implements OnInit {
   }
 
   modalItem(){
+  }
+
+  clickItem(){
+    const activeItem = document.querySelector('.item-1').getBoundingClientRect();
+    const rectangle = <HTMLElement>document.querySelector('.rectangle')
+    const position = {
+      height: activeItem.height,
+      width: activeItem.width,
+      top: activeItem.top,
+      left: activeItem.left
+    }
+    rectangle.style.setProperty('height', `${position.height}px`);
+    rectangle.style.setProperty('width', `${position.width}px`);
+    rectangle.style.setProperty('top', `${position.top}px`);
+    rectangle.style.setProperty('left', `${position.left}px`);
+
+    setTimeout(() => {
+      rectangle.style.setProperty('top', '100px');
+      rectangle.style.setProperty('left', '40px');
+      rectangle.style.setProperty('background-color', 'none');
+      rectangle.style.setProperty('background-image', 'url(https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)')
+    rectangle.style.setProperty('width', '30vw');
+    }, 200);
   }
 
   openModal(input?: any){

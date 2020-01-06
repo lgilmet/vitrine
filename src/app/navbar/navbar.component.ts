@@ -29,7 +29,7 @@ export class NavbarComponent implements OnInit {
   }
 
   navPanel() {
-    !this.sidePanel? this.openPanel(): this.closePanel();
+    !this.sidePanel? this.openPanel(): this.closePanel(); 
   }
 
   openPanel() {

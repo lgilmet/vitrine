@@ -58,6 +58,12 @@
     background-color: none;
 }
 
+.rectangle {
+    position: fixed;
+    background-color: red;
+    z-index: 200;
+    transition: all 0.3s ease;
+}
 
 .x-close{
     margin: 20px 45%;

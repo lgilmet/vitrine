@@ -1,83 +1,10 @@
+<div class="rectangle"></div>
+
 <div id="home" class="fleurs">
   <app-navbar></app-navbar>
 
   <button (click)="closeModal()" class="x-close"><span>&times;</span></button>
-  <div class="modal" id="simpleModal">
-    <div class="modal-content" id="modalContent">
-      <h2>Qui sommes-nous?</h2>
-      <p>
-        Nous sommes une entreprise familliale spécialisée en fleuristerie et en
-        horticulture. Établie au 2935 ave. Haig à Montréal depuis 1950, notre
-        famille est dans le métier depuis plus de 100 ans (voir historique pour
-        plus de détails). <br /><br />
-        Nous produisons et vendons sur place la grande majorité de nos végétaux
-        dans nos 8000 pieds carrés de serres dans l'est de Montréal. Pour ce qui
-        est des plantes non produites dans nos serres, nous achetons la majorité
-        d'entres elles de différents producteurs du Québec. <br /><br />
-        Notre clientèle principale est le public. Nous sommes principalement
-        dans la vente au détail mais nous produisons aussi certains produits
-        pour la vente en gros, comme les poinsettias et les lierres anglais.
-        <br /><br />
-        Nos fleurs coupées sont de première qualité et sont importées de
-        plusieurs pays, tels que la Hollande, la Colombie et l'Équateur. Nous
-        avons une superbe sélection à l'année et nous pouvons faire des bouquets
-        et arrangements pour toutes les occasions (Marriages, funéraires, bals,
-        fêtes, naissances etc). <br /><br />
-        Nous essayons d'avoir le plus grand choix de végétaux possible pour les
-        saisons d'été et nous avons une superbe sélection de plantes vertes et
-        fleuries à l'année. Nous avons aussi une vaste sélection de produits
-        horticoles pour tous vos besoins tel que des semences de toutes sortes,
-        engrais, terreaux intérieurs et extérieurs, pots décoratif, petits
-        outils, etc.
-        <br /><br />
-        Notre priorité est de vous offrir un service exceptionnel et des
-        produits de hautes qualités.
-      </p>
-      <hr />
-      <h2>La petite histoire</h2>
-      <img
-        src="http://www.frankfleuriste.com/photos/famille1900-1_2.jpg"
-        alt=""
-      />
-      <p>
-        En 1917, Martin et Julia Zyromski, immigrants Polonais issus d'une
-        famille d'agriculteurs, se sont installés dans la municipalité de
-        St-François d'Assise de Longue Pointe pour construire leurs premières
-        serres, connues à l'époque sous le nom de ''Longue Pointe Florist'',
-        ainsi qu'une ferme pour l'élevage de cheveaux, de vaches, de poules et
-        d'abeilles. Ils y produisaient du miel et du fromage cottage, en plus de
-        fleurs poussées en champ, tel que des glaieuls. La production en serre à
-        cette époque était surtout composée de fleurs saisonnières et de potées
-        fleuries. Le tout était vendu localement ainsi qu'au Marché Bonsecours.
-        <br /><br />
-
-        Les Zyromski ont étés parmis les premiers pionniers qui ce sont
-        installés dans la région et qui ont participé à son développement. C'est
-        en 1949 que Frank Zyromski Senior, fils de Martin et Julia Zyromski, et
-        son épouse, Juliette Morin Zyromski, débutent la construction de
-        nouvelles serres ainsi qu'une boutique florale 'Frank's Flowers' situé
-        au 2935 Haig, sur une partie de la ferme familiale. <br /><br />
-
-        En 1955, Frank's flowers est devenu le premier bureau de poste de la
-        région. Juliette Morin Zyromski a été Maître de poste jusqu'en 1960,
-        date à laquelle le service de poste fût transféré sur la rue Marseille.
-        En 1957, Madame Zyromski a également été une des personnes qui aida à la
-        construction de l'église St-Donat, en organisant plusieurs activitées
-        pour aider au financement du projet. Johanne Zyromski, fille de Frank et
-        Juliette a été un des premiers bébés baptisés à l'église. <br /><br />
-
-        Pendant l'hiver 1997-1998, la crise du verglas détruit completement les
-        serres. La poids de la glace écrasent la structure de vitre et de métal
-        et le tout s'écroule. C'est alors que Johanne Zyromski et son époux,
-        Pierre Potvin, qui avaient pris la relève du commerce, décident par
-        amour du métier, de tout reconstruire avec des serres modernes. Du même
-        coup, ils rénovent aussi la boutique florale. La démoliton et
-        construction dure près de 2ans. Les serres de nouvelles générations nous
-        permettent aujourd'hui une plus grande surface ( 8000pi2) de production
-        et une encore meilleure qualité de produits.
-      </p>
-    </div>
-  </div>
+  
 
   <div class="landing">
     <table class="heures">
@@ -104,7 +31,14 @@
       d'interieur et d'exterieur en magasin.
     </p>
     <div class="shelf">
-      <div (click)="modalItem()" class="item item-1">
+              <div class="item">
+        <img
+          src="https://images.pexels.com/photos/1777813/pexels-photo-1777813.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
+          alt=""
+        />
+        <p>Pothos - 5$ a 30$</p>
+      </div>
+      <div (click)="clickItem()" class="item item-1">
         <img
           src="https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
           alt=""
@@ -112,13 +46,7 @@
         <p>Oiseau du paradis - 15$ a 30$</p>
         <p>6po a 12po</p>
       </div>
-      <div class="item">
-        <img
-          src="https://images.pexels.com/photos/1777813/pexels-photo-1777813.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-          alt=""
-        />
-        <p>Pothos - 5$ a 30$</p>
-      </div>
+
       <div class="item">
         <img
           src="https://images.pexels.com/photos/2001154/pexels-photo-2001154.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -181,3 +109,32 @@
 
   <app-map-contact (openModalOutput)="openModal($event)"></app-map-contact>
 </div>
+
+
+
+<div class="modal" id="simpleModal">
+    <div class="modal-content" id="modalContent">
+      <h2>Qui sommes-nous?</h2>
+      <p>
+        Nous sommes une entreprise familliale spécialisée en fleuristerie et en horticulture. Établie au 2935 ave. Haig à Montréal depuis 1950, notre famille est dans le métier depuis plus de 100 ans (voir historique pour plus de détails). <br /><br />
+        Nous produisons et vendons sur place la grande majorité de nos végétaux dans nos 8000 pieds carrés de serres dans l'est de Montréal. Pour ce qui est des plantes non produites dans nos serres, nous achetons la majorité d'entres elles de différents producteurs du Québec. <br /><br />
+        Notre clientèle principale est le public. Nous sommes principalement dans la vente au détail mais nous produisons aussi certains produits pour la vente en gros, comme les poinsettias et les lierres anglais. <br /><br />
+        Nos fleurs coupées sont de première qualité et sont importées de plusieurs pays, tels que la Hollande, la Colombie et l'Équateur. Nous avons une superbe sélection à l'année et nous pouvons faire des bouquets et arrangements pour toutes les occasions (Marriages, funéraires, bals, fêtes, naissances etc). <br /><br />
+        Nous essayons d'avoir le plus grand choix de végétaux possible pour les saisons d'été et nous avons une superbe sélection de plantes vertes et fleuries à l'année. Nous avons aussi une vaste sélection de produits horticoles pour tous vos besoins tel que des semences de toutes sortes, engrais, terreaux intérieurs et extérieurs, pots décoratif, petits outils, etc.
+        <br /><br />
+        Notre priorité est de vous offrir un service exceptionnel et des produits de hautes qualités.
+      </p>
+      <hr />
+      <h2>La petite histoire</h2>
+      <img
+        src="http://www.frankfleuriste.com/photos/famille1900-1_2.jpg"
+        alt=""
+      />
+      <p>
+        En 1917, Martin et Julia Zyromski, immigrants Polonais issus d'une famille d'agriculteurs, se sont installés dans la municipalité de St-François d'Assise de Longue Pointe pour construire leurs premières serres, connues à l'époque sous le nom de ''Longue Pointe Florist'', ainsi qu'une ferme pour l'élevage de cheveaux, de vaches, de poules et d'abeilles. Ils y produisaient du miel et du fromage cottage, en plus de fleurs poussées en champ, tel que des glaieuls. La production en serre à cette époque était surtout composée de fleurs saisonnières et de potées fleuries. Le tout était vendu localement ainsi qu'au Marché Bonsecours. <br /><br />
+        Les Zyromski ont étés parmis les premiers pionniers qui ce sont installés dans la région et qui ont participé à son développement. C'est en 1949 que Frank Zyromski Senior, fils de Martin et Julia Zyromski, et son épouse, Juliette Morin Zyromski, débutent la construction de nouvelles serres ainsi qu'une boutique florale 'Frank's Flowers' situé au 2935 Haig, sur une partie de la ferme familiale. <br /><br />
+        En 1955, Frank's flowers est devenu le premier bureau de poste de la région. Juliette Morin Zyromski a été Maître de poste jusqu'en 1960, date à laquelle le service de poste fût transféré sur la rue Marseille. En 1957, Madame Zyromski a également été une des personnes qui aida à la construction de l'église St-Donat, en organisant plusieurs activitées pour aider au financement du projet. Johanne Zyromski, fille de Frank et Juliette a été un des premiers bébés baptisés à l'église. <br /><br />
+        Pendant l'hiver 1997-1998, la crise du verglas détruit completement les serres. La poids de la glace écrasent la structure de vitre et de métal et le tout s'écroule. C'est alors que Johanne Zyromski et son époux, Pierre Potvin, qui avaient pris la relève du commerce, décident par amour du métier, de tout reconstruire avec des serres modernes. Du même coup, ils rénovent aussi la boutique florale. La démoliton et construction dure près de 2ans. Les serres de nouvelles générations nouspermettent aujourd'hui une plus grande surface ( 8000pi2) de production et une encore meilleure qualité de produits.
+      </p>
+    </div>
+  </div>
