@@ -1,84 +1,112 @@
-import { Component, OnInit, Query } from '@angular/core';
-import { ItemService } from '../item.service';
-
+import { Component, OnInit, Query } from "@angular/core";
+import { ItemService } from "../item.service";
 
 @Component({
-  selector: 'app-fleur',
-  templateUrl: './fleur.component.html',
-  styleUrls: ['./fleur.component.css']
+  selector: "app-fleur",
+  templateUrl: "./fleur.component.html",
+  styleUrls: ["./fleur.component.css"]
 })
 export class FleurComponent implements OnInit {
-
-  public listItems: string= '';
+  public listItems: string = "";
   public modal: any;
-  public closeModalBtn : any;
+  public closeModalBtn: any;
+  public sendDiv: any;
 
-  constructor(public todos: ItemService) { }
+  constructor(public todos: ItemService) {}
 
   ngOnInit() {
     this.getItems();
-    this.modal = document.querySelector('.modal');
-    this.closeModalBtn = document.querySelector('.x-close');
+    this.modal = document.querySelector(".modal");
+    this.closeModalBtn = document.querySelector(".x-close");
   }
 
-  async getItems(){
-    let todoList:string = await <any>this.todos.getList();
+  async getItems() {
+    let todoList: string = await (<any>this.todos.getList());
     this.listItems = todoList;
-    console.log(todoList)
+    console.log(todoList);
   }
 
-  modalItem(){
+  modalItem() {}
+
+  clickItem() {
+    let activeItem = document
+      .querySelector(".item-1 img")
+      .getBoundingClientRect();
+    let activeItemContent = <HTMLElement>(
+      document.querySelector(".item-1 img").cloneNode(true)
+    );
+    let command = "item";
+
+    this.sendDiv = { command, activeItemContent, activeItem };
+    // let copyrec = <HTMLElement>document.querySelector(".rectangle");
+
+    // let rectangle = <HTMLElement>copyrec.cloneNode(true);
+    // rectangle.classList.add("copyrec");
+    // document.body.append(rectangle);
+    // // let copyrec = <HTMLElement>rectangle.cloneNode(true)
+    // // copyrec.classList.add('copyrec')
+    // let position = {
+    //   height: activeItem.height,
+    //   width: activeItem.width,
+    //   top: activeItem.top,
+    //   left: activeItem.left
+    // };
+
+    // rectangle.style.setProperty("height", `${position.height}px`);
+    // rectangle.style.setProperty("width", `${position.width}px`);
+    // rectangle.style.setProperty("top", `${position.top}px`);
+    // rectangle.style.setProperty("left", `${position.left}px`);
+    // rectangle.innerHTML =
+    //   "<img style=' width: 100%;' src='https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260' />";
+    // // "<img style=' width: 100%; height: 100%; object-fit: cover; border-radius:16px' src='https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260' />";
+
+    // // document.body.style.marginRight='15px';
+
+    // this.closeModalBtn.style.display = "block";
+    // setTimeout(() => {
+    //   rectangle.style.top = "53px";
+    //   //rectangle.style.left = '15vw';
+    //   rectangle.style.left = "calc(15vw + .5px)";
+    //   rectangle.style.width = "300px";
+    //   rectangle.style.height = "400px";
+    //   document.body.style.marginRight = "17px";
+    //   this.openModal();
+    //   //this.modal.style.display = 'block';
+    // }, 10);
+
+    // setTimeout(() => {
+    //   rectangle.style.top = "0px";
+    //   rectangle.style.left = "0px";
+    //   rectangle.style.position = "relative";
+    //   document.querySelector(".modal-content").append(rectangle);
+
+    //   this.modal.classList.add("modal-on");
+    // }, 1000);
   }
 
-  clickItem(){
-    const activeItem = document.querySelector('.item-1').getBoundingClientRect();
-    const rectangle = <HTMLElement>document.querySelector('.rectangle')
-    const position = {
-      height: activeItem.height,
-      width: activeItem.width,
-      top: activeItem.top,
-      left: activeItem.left
-    }
-    rectangle.style.setProperty('height', `${position.height}px`);
-    rectangle.style.setProperty('width', `${position.width}px`);
-    rectangle.style.setProperty('top', `${position.top}px`);
-    rectangle.style.setProperty('left', `${position.left}px`);
-
+  openModal(input?: any) {
+    document.body.style.overflow = "hidden";
+    this.modal.style.display = "block";
     setTimeout(() => {
-      rectangle.style.setProperty('top', '100px');
-      rectangle.style.setProperty('left', '40px');
-      rectangle.style.setProperty('background-color', 'none');
-      rectangle.style.setProperty('background-image', 'url(https://images.pexels.com/photos/1974508/pexels-photo-1974508.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260)')
-    rectangle.style.setProperty('width', '30vw');
+      this.modal.classList.add("modal-on");
+      this.closeModalBtn.style.display = "block";
     }, 200);
   }
 
-  openModal(input?: any){
-    
-    let top = window.pageYOffset
-    console.log(top)
-    document.querySelector('html').style.scrollBehavior = 'auto'
-    document.body.style.overflow= 'hidden';
-    // window.scrollTo({
-    //   top: 0
-    // })
-    console.log(this.modal.style.top)
-    this.modal.style.top =  `${top}`;
-    console.log(this.modal.style.top)
-    this.modal.style.display = 'block'
-    setTimeout(() => {
-      this.modal.classList.add('modal-on') 
-    this.closeModalBtn.style.display = 'block'
-    }
-    , 200)
-  }
+  closeModal() {
+    const rectangle = <HTMLElement>document.querySelector(".copyrec");
+    if (rectangle != null) rectangle.remove();
 
-  closeModal(){
-    document.body.style.overflow = 'auto';
-    this.modal.classList.remove('modal-on')
-    this.closeModalBtn.style.display = 'none'
+    document.body.style.marginRight = "0px";
+    document.body.style.overflow = "scroll";
+    this.modal.classList.remove("modal-on");
+    this.closeModalBtn.style.display = "none";
     setTimeout(() => {
-    this.modal.style.display = 'none' 
-  }, 500);
+      this.modal.scrollTo(0, 0);
+      this.modal.style.display = "none";
+      rectangle.style.display = "fixed";
+      rectangle.style.zIndex = "200";
+      rectangle.remove();
+    }, 500);
   }
 }

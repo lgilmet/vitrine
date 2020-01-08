@@ -9,6 +9,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { MapContactComponent } from './map-contact/map-contact.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { MapContactComponent } from './map-contact/map-contact.component';
     FleurComponent,
     NavbarComponent,
     HomeComponent,
-    MapContactComponent
+    MapContactComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
