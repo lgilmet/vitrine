@@ -128,6 +128,14 @@ th {
   border: 3px double rgba(95, 158, 160, 0.24);
   border-radius: 17px;
   background-color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.item:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(84, 129, 175, 0.616) 5px 3px 5px, white 3px,
+    rgb(255, 255, 255) -3px -3px 8px;
 }
 
 .item img {
@@ -139,8 +147,14 @@ th {
   align-self: flex-start;
 }
 
+.item .description {
+  display: block;
+  height: 100%;
+}
+
 .item p {
   margin: 5px 15px 0;
+  pointer-events: none;
 }
 
 @media screen and (max-width: 800px) {
