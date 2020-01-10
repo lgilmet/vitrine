@@ -59,7 +59,7 @@ export class FleurComponent implements OnInit {
     };
   }
 
-  openAbout() {
+  openAbout(e) {
     this.sendDiv = { command: "about" };
   }
 }

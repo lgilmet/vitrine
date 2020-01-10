@@ -47,7 +47,7 @@ export class ModalComponent implements OnInit {
   }
 
   itemModal(item: any) {
-    let whatsthis = this.snackbar.open("chose item");
+    //let whatsthis = this.snackbar.open("chose item");
 
     let startPosition = item.activeItem;
     console.log("imgStart ", this.imgStart);
